@@ -13,12 +13,12 @@ export class AppService {
 
   getExample(name: string): string {
     if (!name) {
-      throw new BadRequestException('Variable obrigatórrio');
+      throw new BadRequestException('Variable name is a required parameter');
     }
 
     if (name.length < 3) {
       throw new HttpException(
-        'Name tem que ser maior que 3 caracteres',
+        'Variable name must contain more than 3 characters',
         HttpStatus.PRECONDITION_FAILED,
       );
     }
